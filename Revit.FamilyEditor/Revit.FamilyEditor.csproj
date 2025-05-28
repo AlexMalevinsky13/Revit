@@ -73,10 +73,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App.cs" />
-    <Compile Include="ExportCommand.cs" />
+    <Compile Include="ExportFamily.cs" />
     <Compile Include="FamilyDataSerializer.cs" />
-    <Compile Include="ImportCommand.cs" />
+    <Compile Include="ImportFamily.cs" />
     <Compile Include="Models\AlignmentData.cs" />
     <Compile Include="Models\DimensionData.cs" />
     <Compile Include="Models\ExtrusionData.cs" />

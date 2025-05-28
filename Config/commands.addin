@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+
+	<AddIn Type="Command">
+		<Name>ExportFamily</Name>
+		<Assembly></Assembly>
+		<AddInId>6E0AA8C2-5678-4D3A-9F9B-0DABCE123446</AddInId>
+		<FullClassName>Revit.FamilyEditor.ExportFamily</FullClassName>
+		<VendorId></VendorId>
+		<VendorDescription>Плагин FamilyEditor</VendorDescription>
+	</AddIn>
+
+	<AddIn Type="Command">
+		<Name>ImportFamily</Name>
+		<Assembly></Assembly>
+		<AddInId>6E0AA8C2-5678-4D3A-9F9B-0DABCE133446</AddInId>
+		<FullClassName>Revit.FamilyEditor.ImportFamily</FullClassName>
+		<VendorId></VendorId>
+		<VendorDescription>Плагин FamilyEditor</VendorDescription>
+	</AddIn>
+
+</RevitAddIns>	

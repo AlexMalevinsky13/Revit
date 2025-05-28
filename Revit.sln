@@ -17,6 +17,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Revit.Lesson3.Menu", "Revit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Revit.FamilyEditor", "Revit.FamilyEditor\Revit.FamilyEditor.csproj", "{85AAA94D-3306-4ECB-8777-1FFA37EDCD2D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{BD1DBC6A-5B2B-41B6-838D-24AC9B355265}"
+	ProjectSection(SolutionItems) = preProject
+		commands.addin = commands.addin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{2320C7E0-C9E3-4E04-A1DD-7C503845065C}"
+	ProjectSection(SolutionItems) = preProject
+		Example\family_export_example.json = Example\family_export_example.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
