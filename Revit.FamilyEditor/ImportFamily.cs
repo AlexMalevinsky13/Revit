@@ -162,7 +162,10 @@ namespace Revit.FamilyEditor
                 Parameter extDepthParam = extrusion.get_Parameter(BuiltInParameter.EXTRUSION_END_PARAM);
                 if (extDepthParam != null)
                 {
-                    fm.SetFormula(param, param.Definition.Name);
+                    if (!fm.IsAssociated(extDepthParam))
+                    {
+                        fm.AssociateElementParameter(extDepthParam, param);
+                    }
                 }
             }
         }
