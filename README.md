@@ -27,7 +27,7 @@
 <RevitAddIns>
   <AddIn Type="Command">
     <Name>ExportFamily</Name>
-    <Assembly>ПУТЬ_ДО_СБОРКИ\Revit.FamilyEditor.dll</Assembly>
+    <Assembly>ПУТЬ_К_СБОРКЕ\Revit.FamilyEditor.dll</Assembly>
     <AddInId>6E0AA8C2-5678-4D3A-9F9B-0DABCE123446</AddInId>
     <FullClassName>Revit.FamilyEditor.ExportFamily</FullClassName>
     <VendorId>RFE</VendorId>
@@ -36,7 +36,7 @@
 
   <AddIn Type="Command">
     <Name>ImportFamily</Name>
-    <Assembly>ПУТЬ_ДО_СБОРКИ\Revit.FamilyEditor.dll</Assembly>
+    <Assembly>ПУТЬ_К_СБОРКЕ\Revit.FamilyEditor.dll</Assembly>
     <AddInId>6E0AA8C2-5678-4D3A-9F9B-0DABCE133446</AddInId>
     <FullClassName>Revit.FamilyEditor.ImportFamily</FullClassName>
     <VendorId>RFE</VendorId>
