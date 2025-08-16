@@ -109,7 +109,7 @@ namespace Revit.FamilyEditor
                 var param = fm.AddParameter(
                     p.Name,
                     GroupTypeId.Constraints,
-                    SpecTypeId.Length,
+                    GetSpecTypeId(p.Type),
                     false
                 );
 
@@ -118,6 +118,36 @@ namespace Revit.FamilyEditor
                     double internalVal = UnitUtils.ConvertToInternalUnits(p.Value, UnitTypeId.Millimeters);
                     fm.Set(param, internalVal);
                 }
+            }
+        }
+
+        private static ForgeTypeId GetSpecTypeId(string type)
+        {
+            if (string.IsNullOrWhiteSpace(type))
+                return SpecTypeId.Length;
+
+            switch (type.Trim().ToLowerInvariant())
+            {
+                case "length":
+                    return SpecTypeId.Length;
+                case "angle":
+                    return SpecTypeId.Angle;
+                case "text":
+                    return SpecTypeId.String.Text;
+                case "multilinetext":
+                    return SpecTypeId.String.MultilineText;
+                case "url":
+                    return SpecTypeId.String.Url;
+                case "yesno":
+                case "boolean":
+                    return SpecTypeId.Boolean.YesNo;
+                case "integer":
+                case "int":
+                    return SpecTypeId.Int.Integer;
+                case "material":
+                    return SpecTypeId.Reference.Material;
+                default:
+                    return SpecTypeId.Length;
             }
         }
 
@@ -163,6 +193,12 @@ namespace Revit.FamilyEditor
                 if (extDepthParam != null)
                 {
                     fm.SetFormula(param, param.Definition.Name);
+
+                    FamilyParameter associatedParam = fm.GetAssociatedFamilyParameter(extDepthParam);
+                    if (associatedParam == null)
+                    {
+                        fm.AssociateElementParameterToFamilyParameter(extDepthParam, param);
+                    }
                 }
             }
         }

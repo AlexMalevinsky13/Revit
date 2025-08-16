@@ -81,8 +81,46 @@ namespace Revit.FamilyEditor
                     Name = p.Definition.Name,
                     Value = manager.CurrentType != null && manager.CurrentType.HasValue(p)
                         ? (double)(manager.CurrentType.AsDouble(p) * 304.8) : 0.0,
-                    Type = "Length"
+                    Type = GetParameterTypeString(p.Definition)
                 }).ToList();
+        }
+
+        private static string GetParameterTypeString(Definition def)
+        {
+            try
+            {
+                ForgeTypeId specId = def.GetDataType();
+
+                if (specId == SpecTypeId.Length) 
+                    return "Length";
+                
+                if (specId == SpecTypeId.Angle) 
+                    return "Angle";
+                
+                if (specId == SpecTypeId.String.Text) 
+                    return "Text";
+
+                if (specId == SpecTypeId.String.MultilineText) 
+                    return "MultilineText";
+
+                if (specId == SpecTypeId.String.Url) 
+                    return "Url";
+
+                if (specId == SpecTypeId.Boolean.YesNo) 
+                    return "YesNo";
+
+                if (specId == SpecTypeId.Int.Integer) 
+                    return "Integer";
+
+                if (specId == SpecTypeId.Reference.Material) 
+                    return "Material";
+
+                return specId.TypeId;
+            }
+            catch
+            {
+                return "Length";
+            }
         }
 
         private static ExtrusionData GetExtrusionData(Document doc)
